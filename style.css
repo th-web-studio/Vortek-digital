@@ -1,12 +1,12 @@
-/* --- VORTEK DIGITAL: GLOBAL STYLES --- */
+/* --- VORTEK DIGITAL: BRUTALIST MINIMALISM --- */
 
 :root {
-    --bg-black: #050505;
-    --surface-gray: #111113;
-    --vortek-blue: #2563eb; /* Professional Tech Blue */
-    --steel-gray: #e5e7eb;
-    --muted-gray: #71717a;
-    --transition: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    --black: #000000;
+    --dark-grey: #1a1a1a;
+    --mid-grey: #333333;
+    --light-grey: #f0f0f0;
+    --vortek-blue: #0047ff; /* Bold Power Blue */
+    --transition: 0.3s ease;
 }
 
 * {
@@ -16,145 +16,173 @@
 }
 
 body {
-    background-color: var(--bg-black);
-    color: var(--steel-gray);
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    overflow-x: hidden;
+    background-color: var(--black);
+    color: var(--light-grey);
+    font-family: 'Space Grotesk', sans-serif; /* A more tech-focused font */
+    line-height: 1.4;
 }
 
-/* --- LOGO STYLING --- */
-.logo-container {
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    line-height: 1;
-}
-
-.vortek-word {
-    font-size: 1.6rem;
-    font-weight: 900;
-    color: var(--steel-gray);
-    text-transform: uppercase;
-    letter-spacing: -1px;
-}
-
-.digital-word {
-    font-size: 0.65rem;
-    font-weight: 400;
-    color: var(--vortek-blue);
-    text-transform: uppercase;
-    letter-spacing: 6px; /* High-end spaced look */
-    margin-top: 2px;
-}
-
-/* --- NAVIGATION --- */
+/* --- NAVIGATION: FIXED & BORDERED --- */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 6%;
+    padding: 20px 5%;
     position: fixed;
     width: 100%;
     top: 0;
+    background: var(--black);
+    border-bottom: 1px solid var(--mid-grey);
     z-index: 1000;
-    background: rgba(5, 5, 5, 0.85);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.nav-links { display: none; }
-@media (min-width: 768px) {
-    .nav-links { display: flex; gap: 40px; }
+.logo {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.v-bold {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--light-grey);
+    letter-spacing: -1px;
+}
+
+.d-light {
+    font-weight: 300;
+    font-size: 0.7rem;
+    color: var(--vortek-blue);
+    letter-spacing: 4px;
+    margin-top: -2px;
 }
 
 .nav-links a {
-    color: var(--steel-gray);
+    color: var(--light-grey);
     text-decoration: none;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
+    margin-left: 30px;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    opacity: 0.6;
     transition: var(--transition);
 }
 
 .nav-links a:hover {
-    opacity: 1;
     color: var(--vortek-blue);
 }
 
-/* --- HERO SECTION --- */
+/* --- HERO: TYPOGRAPHY FOCUSED --- */
 .hero {
     height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 0 8%;
-    background: radial-gradient(circle at center, #0a0a1a 0%, var(--bg-black) 90%);
+    padding: 0 5%;
+    border-bottom: 1px solid var(--mid-grey);
 }
 
-.hero-title {
-    font-size: clamp(2.5rem, 8vw, 5.5rem);
-    font-weight: 900;
+.hero-content {
+    max-width: 900px;
+}
+
+.status-tag {
+    font-size: 0.7rem;
+    color: var(--vortek-blue);
+    text-transform: uppercase;
+    border: 1px solid var(--vortek-blue);
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: inline-block;
     margin-bottom: 20px;
 }
 
-.blue-accent {
+h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 500;
+    letter-spacing: -2px;
+    line-height: 1;
+}
+
+.blue-text {
     color: var(--vortek-blue);
-    text-shadow: 0 0 30px rgba(37, 99, 235, 0.2);
+    font-style: italic;
 }
 
-.hero-sub {
-    color: var(--muted-gray);
-    max-width: 650px;
-    margin-bottom: 40px;
-}
-
-/* --- SERVICES GRID --- */
-.services-section { padding: 80px 6%; }
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.service-card {
-    background: var(--surface-gray);
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    padding: 40px;
-    transition: var(--transition);
-}
-
-.service-card:hover {
-    border-color: var(--vortek-blue);
-    transform: translateY(-5px);
+.hero-actions {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
 }
 
 /* --- BUTTONS --- */
-.cta-btn {
-    padding: 18px 40px;
-    border: 1px solid var(--vortek-blue);
-    color: var(--vortek-blue);
+.btn-primary {
+    background: var(--vortek-blue);
+    color: white;
+    padding: 15px 30px;
     text-decoration: none;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-weight: 500;
     transition: var(--transition);
 }
 
-.cta-btn:hover {
-    background: var(--vortek-blue);
-    color: white;
+.btn-secondary {
+    border: 1px solid var(--light-grey);
+    color: var(--light-grey);
+    padding: 15px 30px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+}
+
+/* --- SERVICES: LIST STYLE --- */
+.service-row {
+    display: flex;
+    padding: 60px 5%;
+    border-bottom: 1px solid var(--mid-grey);
+    transition: var(--transition);
+}
+
+.service-row:hover {
+    background: var(--dark-grey);
+}
+
+.service-num {
+    font-size: 0.8rem;
+    color: var(--vortek-blue);
+    width: 100px;
+    padding-top: 10px;
+}
+
+.service-info h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.service-info p {
+    color: var(--muted-gray);
+    max-width: 500px;
 }
 
 /* --- FOOTER --- */
 footer {
-    padding: 40px;
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    font-size: 0.7rem;
-    color: var(--muted-gray);
+    padding: 40px 5%;
+    font-size: 0.8rem;
+}
+
+.footer-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.socials a {
+    color: var(--light-grey);
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .service-row { flex-direction: column; gap: 20px; }
+    .hero-actions { flex-direction: column; }
 }
