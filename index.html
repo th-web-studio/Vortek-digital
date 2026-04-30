@@ -3,144 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TH WEB STUDIO | Web Design & Data</title>
+    <title>TH WEB STUDIO</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <nav class="main-nav">
-        <div class="nav-container">
-            <a href="#hero" class="brand">TH WEB <span class="accent">STUDIO</span></a>
-            
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
-            <div class="menu-links" id="menu-links">
-                <a href="#portfolio">PORTFOLIO</a>
-                <a href="#services">SERVICES</a>
-                <a href="#framework">THE FRAMEWORK</a>
-                <a href="#about">ABOUT</a>
-                <a href="#contact" class="nav-cta">GET STARTED</a>
-            </div>
-        </div>
+    <nav class="top-bar">
+        <a href="index.html" class="brand">TH WEB <span class="accent">STUDIO</span></a>
+        
+        <button class="menu-btn" id="menu-btn">
+            <div class="btn-line"></div>
+            <div class="btn-line short"></div>
+        </button>
     </nav>
 
-    <main>
-        <section id="hero" class="hero-section">
-            <div class="container">
-                <span class="eyebrow">ESTABLISHED 2026</span>
-                <h1>Solid web design for <br>businesses that <span class="blue-text">want results.</span></h1>
-                <p>We build high-performance websites and data tools for companies that value quality work over quick templates.</p>
-            </div>
-        </section>
+    <div class="side-drawer" id="side-drawer">
+        <div class="drawer-content">
+            <ul class="nav-list">
+                <li><a href="portfolio.html" class="main-link">PORTFOLIO</a></li>
+                
+                <li class="has-sub">
+                    <button class="dropdown-btn">SERVICES <span class="plus">+</span></button>
+                    <ul class="sub-menu">
+                        <li><a href="services.html#branding">Identity</a></li>
+                        <li><a href="services.html#engineering">Engineering</a></li>
+                        <li><a href="services.html#data">Data & Insights</a></li>
+                    </ul>
+                </li>
 
-        <section id="portfolio" class="section-padding">
-            <div class="container">
-                <h2 class="section-title">RECENT PROJECTS</h2>
-                <div class="portfolio-grid">
-                    <div class="portfolio-card">
-                        <span class="category">EXCAVATION & LAND MANAGEMENT</span>
-                        <h3>Phipps Excavating</h3>
-                        <p>A clean, tough website built for a leader in the service industry.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+                <li class="has-sub">
+                    <button class="dropdown-btn">THE FRAMEWORK <span class="plus">+</span></button>
+                    <ul class="sub-menu">
+                        <li><a href="framework.html#mission">Our Mission</a></li>
+                        <li><a href="framework.html#faq">FAQ</a></li>
+                        <li><a href="framework.html#method">Our Method</a></li>
+                    </ul>
+                </li>
 
-        <section id="services" class="section-padding grey-bg">
-            <div class="container">
-                <h2 class="section-title">SERVICES</h2>
-                <div class="services-grid">
-                    <div class="service-column">
-                        <span class="sub-label">01 / DESIGN</span>
-                        <h3>Business Identity</h3>
-                        <p>Professional logos and branding that help you look like the expert you are in any market.</p>
-                    </div>
-                    <div class="service-column">
-                        <span class="sub-label">02 / BUILD</span>
-                        <h3>Web Engineering</h3>
-                        <p>Fast, reliable websites built with clean code so they work perfectly on every device.</p>
-                    </div>
-                    <div class="service-column">
-                        <span class="sub-label">03 / DATA</span>
-                        <h3>Insights & Analytics</h3>
-                        <p>Using Python to help you understand your business numbers through clear, simple dashboards.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="framework" class="section-padding">
-            <div class="container">
-                <h2 class="section-title">THE FRAMEWORK</h2>
-                <div class="framework-grid">
-                    <div class="framework-item">
-                        <span class="sub-label">OUR MISSION</span>
-                        <h4>Quality Engineering</h4>
-                        <p>We combine traditional values with modern tech to help clients succeed anywhere.</p>
-                    </div>
-                    <div class="framework-item">
-                        <span class="sub-label">FAQ</span>
-                        <h4>You Own Everything</h4>
-                        <p>No hidden code or "lock-in" contracts. Once the job is done, you own the site and all data.</p>
-                    </div>
-                    <div class="framework-item">
-                        <span class="sub-label">METHOD</span>
-                        <h4>Built to Scale</h4>
-                        <p>We focus on speed, security, and making sure your site can grow as your business grows.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="section-padding grey-bg">
-            <div class="container">
-                <h2 class="section-title">ABOUT US</h2>
-                <div class="about-content">
-                    <p>TH Web Studio was started to give businesses a better digital foundation. With a background in coding and data analytics, we build tools that actually help your business run better, not just look better.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section-padding blue-bg">
-            <div class="container">
-                <h2>Ready to get to work?</h2>
-                <p>Accepting new projects for 2026.</p>
-                <div class="contact-details">
-                    <p>PH: (000) 000-0000</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container footer-inner">
-            <span>© 2026 TH WEB STUDIO</span>
-            <span>PROUDLY BASED IN THE US</span>
+                <li><a href="about.html" class="main-link">ABOUT US</a></li>
+                <li><a href="contact.html" class="nav-cta">GET STARTED</a></li>
+            </ul>
         </div>
-    </footer>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
 
     <script>
-        const hamburger = document.getElementById('hamburger');
-        const menuLinks = document.getElementById('menu-links');
+        const menuBtn = document.getElementById('menu-btn');
+        const drawer = document.getElementById('side-drawer');
+        const overlay = document.getElementById('overlay');
+        const dropdowns = document.querySelectorAll('.dropdown-btn');
 
-        hamburger.addEventListener('click', () => {
-            menuLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
+        // Toggle Drawer
+        menuBtn.addEventListener('click', () => {
+            drawer.classList.toggle('open');
+            overlay.classList.toggle('active');
+            menuBtn.classList.toggle('active');
         });
 
-        // Close menu when a link is clicked
-        document.querySelectorAll('.menu-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                menuLinks.classList.remove('active');
-                hamburger.classList.remove('active');
+        // Close when clicking overlay
+        overlay.addEventListener('click', () => {
+            drawer.classList.remove('open');
+            overlay.classList.remove('active');
+            menuBtn.classList.remove('active');
+        });
+
+        // Nested Accordion Logic
+        dropdowns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const subMenu = btn.nextElementSibling;
+                subMenu.classList.toggle('show');
+                btn.querySelector('.plus').textContent = subMenu.classList.contains('show') ? '−' : '+';
             });
         });
     </script>
-
 </body>
 </html>
