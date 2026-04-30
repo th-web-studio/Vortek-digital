@@ -1,190 +1,71 @@
-/* --- VORTEK DIGITAL: ULTRA-PREMIUM ARCHITECTURAL --- */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VORTEK DIGITAL</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
 
-:root {
-    --bg-slate: #0a0e14;
-    --card-bg: #11161d;
-    --vortek-blue: #2563eb;
-    --white: #ffffff;
-    --slate-muted: #94a3b8;
-    --border: rgba(255, 255, 255, 0.05);
-    --transition: 0.5s cubic-bezier(0.2, 1, 0.3, 1);
-}
+    <nav>
+        <div class="nav-wrapper">
+            <a href="index.html" class="logo">VORTEK <span class="blue">DIGITAL</span></a>
+            <div class="nav-links">
+                <a href="#contact">Inquire</a>
+            </div>
+        </div>
+    </nav>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <main>
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-visual-element"></div>
+                <div class="hero-text">
+                    <h1>The standard for <br>digital <span class="blue-text">excellence.</span></h1>
+                    <p>We design and engineer high-performance web solutions for those who refuse to settle for the average.</p>
+                </div>
+            </div>
+        </section>
 
-html {
-    scroll-behavior: smooth;
-    background-color: var(--bg-slate);
-}
+        <section class="experience">
+            <div class="exp-container">
+                
+                <div class="exp-item">
+                    <div class="exp-content">
+                        <div class="accent-bar"></div>
+                        <h3>Technical Architecture</h3>
+                        <p>Bespoke web environments built on a foundation of speed, security, and absolute precision.</p>
+                    </div>
+                </div>
 
-body {
-    background-color: var(--bg-slate);
-    color: var(--white);
-    font-family: 'Inter', sans-serif;
-    line-height: 1.2;
-    -webkit-font-smoothing: antialiased;
-}
+                <div class="exp-item shift">
+                    <div class="exp-content">
+                        <div class="accent-bar"></div>
+                        <h3>Visual Intelligence</h3>
+                        <p>Converting complex information into intuitive, high-fidelity dashboards that drive growth.</p>
+                    </div>
+                </div>
 
-/* --- REFINED NAV --- */
-nav {
-    padding: 40px 6%;
-    position: absolute;
-    width: 100%;
-    z-index: 100;
-}
+                <div class="exp-item">
+                    <div class="exp-content">
+                        <div class="accent-bar"></div>
+                        <h3>Identity Systems</h3>
+                        <p>Aesthetic frameworks engineered to command authority across the modern digital landscape.</p>
+                    </div>
+                </div>
 
-.nav-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+            </div>
+        </section>
+    </main>
 
-.logo {
-    text-decoration: none;
-    font-weight: 900;
-    font-size: 1.1rem;
-    color: var(--white);
-    letter-spacing: 2px;
-}
+    <footer>
+        <div class="footer-wrap">
+            <p>© 2026 VORTEK DIGITAL</p>
+            <p>Quality / Performance / Precision</p>
+        </div>
+    </footer>
 
-.blue { color: var(--vortek-blue); font-weight: 300; }
-
-.contact-link {
-    color: var(--white);
-    text-decoration: none;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border-bottom: 1px solid var(--vortek-blue);
-    padding-bottom: 4px;
-}
-
-/* --- IMMERSIVE HERO --- */
-.hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 0 6%;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-}
-
-h1 {
-    font-size: clamp(3.5rem, 12vw, 9rem);
-    font-weight: 900;
-    line-height: 0.85;
-    letter-spacing: -5px;
-    margin-bottom: 30px;
-}
-
-.blue-text {
-    color: var(--vortek-blue);
-    text-shadow: 0 0 50px rgba(37, 99, 235, 0.3);
-}
-
-.hero-content p {
-    font-size: clamp(1rem, 2vw, 1.4rem);
-    color: var(--slate-muted);
-    max-width: 550px;
-    margin-left: 5px;
-    line-height: 1.5;
-}
-
-.hero-bg-accent {
-    position: absolute;
-    top: 50%;
-    right: -10%;
-    width: 60vw;
-    height: 60vw;
-    background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
-    pointer-events: none;
-}
-
-/* --- SOLUTIONS GRID --- */
-.solutions-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    background-color: var(--border);
-    gap: 1px; /* The "Precision Line" effect */
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-}
-
-.solution-card {
-    background-color: var(--bg-slate);
-    padding: 80px 12%;
-    position: relative;
-    overflow: hidden;
-    transition: var(--transition);
-}
-
-.solution-card:hover {
-    background-color: var(--card-bg);
-}
-
-.index {
-    display: block;
-    font-size: 0.7rem;
-    font-weight: 900;
-    color: var(--vortek-blue);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 30px;
-}
-
-.solution-card h2 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    letter-spacing: -1px;
-    margin-bottom: 20px;
-}
-
-.solution-card p {
-    font-size: 1.05rem;
-    color: var(--slate-muted);
-    line-height: 1.6;
-}
-
-/* Subtle glow effect on hover */
-.card-glow {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.05), transparent 60%);
-    opacity: 0;
-    transition: var(--transition);
-}
-
-.solution-card:hover .card-glow {
-    opacity: 1;
-}
-
-/* --- FOOTER --- */
-footer {
-    padding: 60px 6%;
-}
-
-.footer-inner {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.65rem;
-    font-weight: 700;
-    color: var(--slate-muted);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-/* --- RESPONSIVE --- */
-@media (max-width: 1100px) {
-    .solutions-grid { grid-template-columns: 1fr; }
-    h1 { letter-spacing: -2px; }
-}
+</body>
+</html>
