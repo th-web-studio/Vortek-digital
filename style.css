@@ -1,14 +1,15 @@
-/* --- TH WEB STUDIO: PREMIUM STRUCTURAL --- */
-
+/* --- TH WEB STUDIO: MASTER DESIGN SYSTEM --- */
 :root {
     --bg-black: #05070a;
     --bg-grey: #0f1217;
     --studio-blue: #2563eb;
     --text-white: #ffffff;
     --text-dim: #94a3b8;
-    --border: rgba(255, 255, 255, 0.08);
+    --border: rgba(255, 255, 255, 0.1);
+    --nav-height: 80px;
 }
 
+/* Global Resets */
 * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
 body {
@@ -16,69 +17,99 @@ body {
     color: var(--text-white);
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
+    padding-top: var(--nav-height);
+    -webkit-font-smoothing: antialiased;
 }
 
-.container { max-width: 1300px; margin: 0 auto; padding: 0 5%; }
-.section-padding { padding: 120px 0; }
-.grey-bg { background-color: var(--bg-grey); }
-.blue-bg { background: var(--studio-blue); color: white; text-align: center; }
+.container { 
+    max-width: 1400px; 
+    margin: 0 auto; 
+    padding: 0 6%; 
+}
 
-/* --- HEADER & NAVIGATION --- */
-header {
+/* Fluid Typography */
+h1 { 
+    font-size: clamp(2.2rem, 8vw, 5.5rem); 
+    font-weight: 900; 
+    line-height: 1.05; 
+    letter-spacing: -0.03em; 
+    margin-bottom: 30px; 
+}
+
+h2.section-title { 
+    font-size: 0.75rem; 
+    color: var(--studio-blue); 
+    letter-spacing: 0.3em; 
+    font-weight: 900; 
+    margin-bottom: 50px; 
+    text-transform: uppercase; 
+}
+
+/* Navigation Bar */
+.main-nav {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000;
-    background: rgba(5, 7, 10, 0.95);
-    backdrop-filter: blur(10px);
+    height: var(--nav-height);
+    background-color: rgba(5, 7, 10, 0.9);
+    backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
 }
 
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 90px;
+    width: 100%;
 }
 
-.brand { text-decoration: none; font-weight: 900; color: white; font-size: 1.15rem; letter-spacing: 1px; }
+.brand {
+    text-decoration: none;
+    font-weight: 900;
+    color: white;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
 .accent { color: var(--studio-blue); }
 
-.desktop-menu a {
+.menu-links { display: flex; align-items: center; gap: 25px; }
+
+.menu-links a {
     text-decoration: none;
     color: var(--text-dim);
     font-size: 0.7rem;
-    font-weight: 700;
-    margin-left: 25px;
+    font-weight: 800;
     letter-spacing: 1px;
     transition: 0.3s ease;
 }
 
-.desktop-menu a:hover { color: var(--studio-blue); }
+.menu-links a:hover { color: white; }
 
-.cta-nav {
+.nav-cta {
     border: 1px solid var(--studio-blue);
-    padding: 10px 20px;
+    padding: 10px 18px;
     color: white !important;
 }
 
-/* --- TYPOGRAPHY & TITLES --- */
-.eyebrow { color: var(--studio-blue); font-weight: 800; font-size: 0.75rem; letter-spacing: 3px; display: block; margin-bottom: 15px; }
-h1 { font-size: clamp(2.5rem, 7vw, 5rem); font-weight: 900; line-height: 1.05; letter-spacing: -2px; margin-bottom: 30px; }
-.blue-text { color: var(--studio-blue); }
-.section-title { font-size: 0.75rem; color: var(--studio-blue); letter-spacing: 4px; font-weight: 900; margin-bottom: 60px; }
+/* Sections & Grids */
+.section-padding { padding: clamp(60px, 10vh, 120px) 0; }
+.grey-bg { background-color: var(--bg-grey); }
+.blue-bg { background: var(--studio-blue); color: white; text-align: center; }
 
-/* --- GRIDS (PORTFOLIO, SERVICES, FRAMEWORK) --- */
 .portfolio-grid, .services-grid, .framework-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 20px;
 }
 
 .portfolio-card, .service-column, .framework-item {
     border: 1px solid var(--border);
-    padding: 40px;
-    transition: 0.3s ease;
+    padding: clamp(25px, 4vw, 45px);
+    transition: border 0.3s ease;
 }
 
 .portfolio-card:hover, .service-column:hover { border-color: var(--studio-blue); }
@@ -92,15 +123,15 @@ h1 { font-size: clamp(2.5rem, 7vw, 5rem); font-weight: 900; line-height: 1.05; l
     letter-spacing: 2px;
 }
 
-h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 15px; letter-spacing: -1px; }
-h4 { font-size: 1.3rem; margin-bottom: 10px; }
+h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 15px; }
+h4 { font-size: 1.3rem; margin-bottom: 10px; font-weight: 800; }
 p { color: var(--text-dim); font-size: 1rem; }
 
-/* --- CONTACT SECTION --- */
-#contact h2 { font-size: 3rem; font-weight: 900; margin-bottom: 10px; }
-.contact-details { margin-top: 30px; font-weight: 800; letter-spacing: 1px; }
+.about-content { max-width: 800px; }
+.about-content p { font-size: 1.2rem; }
 
-/* --- FOOTER --- */
+/* Footers & Contact */
+#contact h2 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 10px; }
 .footer-inner {
     padding: 50px 0;
     display: flex;
@@ -109,12 +140,31 @@ p { color: var(--text-dim); font-size: 1rem; }
     font-size: 0.7rem;
     color: var(--text-dim);
     font-weight: 700;
-    letter-spacing: 1px;
 }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 1000px) {
-    .services-grid, .framework-grid, .portfolio-grid { grid-template-columns: 1fr; }
-    .desktop-menu { display: none; } /* Add a hamburger menu later if needed */
-    h1 { font-size: 3rem; }
+/* --- RESPONSIVE BREAKPOINTS --- */
+
+/* Tablet (2 columns) */
+@media (max-width: 1024px) {
+    .portfolio-grid, .services-grid, .framework-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile (1 column + Compact Nav) */
+@media (max-width: 768px) {
+    .portfolio-grid, .services-grid, .framework-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Hide non-essential links to keep mobile nav clean */
+    .menu-links a:not(.nav-cta) {
+        display: none; 
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
 }
