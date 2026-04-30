@@ -1,13 +1,14 @@
-/* --- VORTEK DIGITAL: THE GLASS-UI HARDWARE THEME --- */
+/* --- VORTEK DIGITAL: CINEMA-GRADE ULTRA PREMIUM --- */
 
 :root {
-    --bg-slate: #05070a;
-    --glass-bg: rgba(15, 20, 28, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.08);
+    --bg-black: #000000;
+    --slate-deep: #0a0e14;
     --vortek-blue: #2563eb;
-    --blue-glow: rgba(37, 99, 235, 0.15);
-    --pure-white: #ffffff;
-    --muted-slate: #94a3b8;
+    --blue-glow: rgba(37, 99, 235, 0.4);
+    --white: #ffffff;
+    --muted: #64748b;
+    --border: rgba(255, 255, 255, 0.05);
+    --transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * {
@@ -17,141 +18,34 @@
 }
 
 body {
-    background-color: var(--bg-slate);
-    color: var(--pure-white);
+    background-color: var(--bg-black);
+    color: var(--white);
     font-family: 'Inter', sans-serif;
-    line-height: 1.2;
+    line-height: 1.1;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* --- AMBIENT LIGHTING --- */
-.ambient-glow {
+/* --- LIGHTING --- */
+.ambient-light {
     position: fixed;
-    top: -10%;
+    top: -20%;
     right: -10%;
-    width: 60vw;
-    height: 60vw;
-    background: radial-gradient(circle, var(--blue-glow) 0%, transparent 70%);
-    z-index: -1;
+    width: 70vw;
+    height: 70vw;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+    z-index: 0;
     pointer-events: none;
 }
 
-/* --- THE GLASS PANEL SYSTEM --- */
-.glass-panel {
-    background: var(--glass-bg);
-    backdrop-filter: blur(15px);
-    border: 1px solid var(--glass-border);
-    border-radius: 4px; /* Professional sharp-slight-round */
-    position: relative;
-    overflow: hidden;
-}
-
-.panel-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 20px;
-    border-bottom: 1px solid var(--glass-border);
-    background: rgba(255, 255, 255, 0.02);
-}
-
-.dot {
-    width: 6px;
-    height: 6px;
-    background-color: var(--vortek-blue);
-    border-radius: 50%;
-}
-
-.panel-label {
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--muted-slate);
-    font-weight: 700;
-}
-
-/* --- HERO --- */
-.hero-frame {
-    padding: 120px 6% 60px;
-}
-
-.main-panel {
-    padding-bottom: 80px;
-}
-
-.main-panel h1 {
-    padding: 60px 40px 20px;
-    font-size: clamp(2.5rem, 8vw, 6rem);
-    font-weight: 900;
-    letter-spacing: -3px;
-    line-height: 0.9;
-}
-
-.blue-text { color: var(--vortek-blue); }
-
-.main-panel p {
-    padding: 0 40px;
-    font-size: 1.2rem;
-    color: var(--muted-slate);
-    max-width: 600px;
-    line-height: 1.6;
-}
-
-/* --- CAPABILITIES GRID --- */
-.capabilities {
-    padding: 0 6% 100px;
-}
-
-.capability-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.cap-panel {
-    transition: all 0.4s ease;
-}
-
-.cap-panel h3 {
-    padding: 40px 30px 15px;
-    font-size: 1.6rem;
-    font-weight: 700;
-    letter-spacing: -1px;
-}
-
-.cap-panel p {
-    padding: 0 30px 60px;
-    font-size: 0.95rem;
-    color: var(--muted-slate);
-    line-height: 1.6;
-}
-
-.card-gradient {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: var(--vortek-blue);
-    transform: scaleX(0);
-    transition: 0.4s ease;
-}
-
-.cap-panel:hover {
-    border-color: var(--vortek-blue);
-    transform: translateY(-5px);
-}
-
-.cap-panel:hover .card-gradient {
-    transform: scaleX(1);
-}
-
-/* --- NAV & FOOTER --- */
+/* --- NAV --- */
 nav {
-    padding: 25px 6%;
+    padding: 40px 6%;
+    position: relative;
+    z-index: 10;
 }
 
-.nav-content {
+.nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -160,34 +54,164 @@ nav {
 .brand {
     text-decoration: none;
     font-weight: 900;
-    color: white;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    color: var(--white);
+    letter-spacing: 3px;
+}
+
+.blue-glow { color: var(--vortek-blue); text-shadow: 0 0 15px var(--blue-glow); }
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.system-status {
+    font-size: 0.6rem;
     letter-spacing: 2px;
+    color: var(--muted);
+    font-weight: 700;
 }
 
-.blue { color: var(--vortek-blue); font-weight: 400; }
-
-.nav-meta {
+.inquire-btn {
+    color: var(--white);
+    text-decoration: none;
     font-size: 0.7rem;
-    color: var(--muted-slate);
-    letter-spacing: 1px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    border: 1px solid var(--vortek-blue);
+    padding: 10px 20px;
+    transition: var(--transition);
 }
 
-.footer-glass {
-    margin: 0 6% 40px;
-    padding: 20px;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
+.inquire-btn:hover {
+    background: var(--vortek-blue);
+    box-shadow: 0 0 20px var(--blue-glow);
+}
+
+/* --- HERO --- */
+.hero {
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 0 6%;
+    position: relative;
+}
+
+.hero-inner {
+    max-width: 1400px;
+    z-index: 2;
+}
+
+.hero-line {
+    width: 60px;
+    height: 4px;
+    background: var(--vortek-blue);
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: clamp(3.5rem, 12vw, 9.5rem);
+    font-weight: 900;
+    line-height: 0.8;
+    letter-spacing: -6px;
+    margin-bottom: 40px;
+}
+
+.text-blue { 
+    color: var(--vortek-blue);
+    text-shadow: 0 0 50px rgba(37, 99, 235, 0.2);
+}
+
+.hero-subtext {
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    color: var(--muted);
+    max-width: 600px;
+    line-height: 1.5;
+    letter-spacing: -0.5px;
+}
+
+/* --- GLASS BLADE GRID --- */
+.services {
+    padding: 0 6% 100px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+}
+
+.glass-blade {
+    background: var(--bg-black);
+    padding: 80px 40px;
+    position: relative;
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.blade-header {
+    font-size: 0.65rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: var(--muted);
+    margin-bottom: 60px;
+}
+
+.blade-content h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.blade-content p {
+    font-size: 1.05rem;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.blade-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--vortek-blue);
+    transition: var(--transition);
+}
+
+.glass-blade:hover {
+    background: var(--slate-deep);
+}
+
+.glass-blade:hover .blade-footer {
+    width: 100%;
+}
+
+.glass-blade:hover .blade-header {
+    color: var(--vortek-blue);
+}
+
+/* --- FOOTER --- */
+footer {
+    padding: 60px 6%;
+    border-top: 1px solid var(--border);
+}
+
+.footer-inner {
     display: flex;
     justify-content: space-between;
-    font-size: 0.7rem;
-    color: var(--muted-slate);
-    text-transform: uppercase;
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: var(--muted);
     letter-spacing: 2px;
 }
 
-/* --- RESPONSIVE --- */
 @media (max-width: 1100px) {
-    .capability-grid { grid-template-columns: 1fr; }
-    h1 { letter-spacing: -1px; }
+    .service-grid { grid-template-columns: 1fr; }
+    h1 { letter-spacing: -3px; }
 }
