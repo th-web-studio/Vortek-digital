@@ -3,58 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TH WEB STUDIO</title>
+    <title>TH WEB STUDIO | Digital Engineering</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <nav>
+    <header>
         <div class="nav-container">
-            <a href="index.html" class="brand">TH WEB <span class="accent">STUDIO</span></a>
-            <div class="nav-right">
-                <a href="#contact">WORK WITH US</a>
-            </div>
+            <a href="#hero" class="brand">TH WEB <span class="accent">STUDIO</span></a>
+            <nav class="desktop-menu">
+                <a href="#portfolio">PORTFOLIO</a>
+                <a href="#services">SERVICES</a>
+                <a href="#framework">THE FRAMEWORK</a>
+                <a href="#about">ABOUT</a>
+                <a href="#contact" class="cta-nav">GET STARTED</a>
+            </nav>
         </div>
-    </nav>
+    </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>The standard for <br>digital <span class="blue-text">excellence.</span></h1>
-                <p>We build and engineer high-performance web solutions for businesses that value quality over the average.</p>
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <span class="eyebrow">ESTABLISHED 2026</span>
+                <h1>Architecting digital <br>authority for <span class="blue-text">local leaders.</span></h1>
+                <p>Premium web development and data-driven design for companies that value precision over the average.</p>
             </div>
         </section>
 
-        <section class="services-container">
-            <div class="service-block">
-                <div class="block-top">DEVELOPMENT</div>
-                <div class="block-main">
-                    <h3>Technical Architecture</h3>
-                    <p>Custom web environments built right—with a focus on speed, security, and absolute precision.</p>
+        <section id="portfolio" class="section-padding">
+            <div class="container">
+                <h2 class="section-title">SELECTED PORTFOLIO</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-card">
+                        <span class="category">EXCAVATION & LAND MANAGEMENT</span>
+                        <h3>Phipps Excavating</h3>
+                        <p>A structural, high-performance site built for a local leader.</p>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="service-block">
-                <div class="block-top">INSIGHTS</div>
-                <div class="block-main">
-                    <h3>Visual Intelligence</h3>
-                    <p>Turning complex data into clear, high-fidelity dashboards that help your business grow.</p>
+        <section id="services" class="section-padding grey-bg">
+            <div class="container">
+                <h2 class="section-title">CAPABILITIES</h2>
+                <div class="services-grid">
+                    <div class="service-column">
+                        <span class="sub-label">01 / IDENTITY</span>
+                        <h3>Digital Authority</h3>
+                        <p>Professional branding systems that command respect and establish trust in the local market.</p>
+                    </div>
+                    <div class="service-column">
+                        <span class="sub-label">02 / CODE</span>
+                        <h3>Web Engineering</h3>
+                        <p>High-speed, structural web solutions built with clean code for performance and longevity.</p>
+                    </div>
+                    <div class="service-column">
+                        <span class="sub-label">03 / DATA</span>
+                        <h3>Visual Intelligence</h3>
+                        <p>Utilizing Python and analytics to turn complex business metrics into actionable insights.</p>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="service-block">
-                <div class="block-top">BRANDING</div>
-                <div class="block-main">
-                    <h3>Identity Systems</h3>
-                    <p>Professional design frameworks built to command respect and authority in today's digital market.</p>
+        <section id="framework" class="section-padding">
+            <div class="container">
+                <h2 class="section-title">THE FRAMEWORK</h2>
+                <div class="framework-grid">
+                    <div class="framework-item">
+                        <span class="sub-label">MISSION</span>
+                        <h4>Digital Excellence</h4>
+                        <p>Bridging the gap between traditional rural business values and world-class digital execution.</p>
+                    </div>
+                    <div class="framework-item">
+                        <span class="sub-label">STANDARDS (FAQ)</span>
+                        <h4>Full Asset Ownership</h4>
+                        <p>You own every line of code and every design asset. We provide the architecture; you own the asset.</p>
+                    </div>
+                    <div class="framework-item">
+                        <span class="sub-label">METHODOLOGY</span>
+                        <h4>Clean Architecture</h4>
+                        <p>We prioritize speed, security, and mobile-first responsiveness in every build we deploy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section-padding grey-bg">
+            <div class="container about-flex">
+                <div class="about-content">
+                    <h2 class="section-title">ABOUT THE STUDIO</h2>
+                    <p>TH Web Studio was founded on the belief that local businesses deserve the same technical rigor as global firms. With a background in data analytics and Python programming, we bring a level of engineering to web design that standard templates can't match.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section-padding blue-bg">
+            <div class="container">
+                <h2>Ready to build?</h2>
+                <p>Now accepting local projects for Summer 2026.</p>
+                <div class="contact-details">
+                    <p>PH: (000) 000-0000</p>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="footer-inner">
+        <div class="container footer-inner">
             <span>© 2026 TH WEB STUDIO</span>
             <span>PROUDLY BASED IN THE US</span>
         </div>
