@@ -1,150 +1,120 @@
-/* --- TH WEB STUDIO: LOCAL PREMIUM STRUCTURAL --- */
+/* --- TH WEB STUDIO: PREMIUM STRUCTURAL --- */
 
 :root {
-    --bg-slate: #0a0e14;
-    --studio-blue: #2563eb; /* Updated variable name for clarity */
-    --border-slate: #1e293b;
-    --white: #ffffff;
-    --muted-slate: #94a3b8;
+    --bg-black: #05070a;
+    --bg-grey: #0f1217;
+    --studio-blue: #2563eb;
+    --text-white: #ffffff;
+    --text-dim: #94a3b8;
+    --border: rgba(255, 255, 255, 0.08);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
 body {
-    background-color: var(--bg-slate);
-    color: var(--white);
+    background-color: var(--bg-black);
+    color: var(--text-white);
     font-family: 'Inter', sans-serif;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
-/* --- NAVIGATION --- */
-nav {
-    border-bottom: 2px solid var(--studio-blue);
+.container { max-width: 1300px; margin: 0 auto; padding: 0 5%; }
+.section-padding { padding: 120px 0; }
+.grey-bg { background-color: var(--bg-grey); }
+.blue-bg { background: var(--studio-blue); color: white; text-align: center; }
+
+/* --- HEADER & NAVIGATION --- */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(5, 7, 10, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
 }
 
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 5%;
-    max-width: 1400px;
-    margin: 0 auto;
+    height: 90px;
 }
 
-.brand {
-    text-decoration: none;
-    font-weight: 900;
-    font-size: 1.2rem; /* Slightly reduced to balance the longer name */
-    color: var(--white);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
+.brand { text-decoration: none; font-weight: 900; color: white; font-size: 1.15rem; letter-spacing: 1px; }
 .accent { color: var(--studio-blue); }
 
-.nav-right a {
+.desktop-menu a {
     text-decoration: none;
-    color: var(--white);
-    font-size: 0.8rem;
-    font-weight: 800;
+    color: var(--text-dim);
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-left: 25px;
     letter-spacing: 1px;
-    border: 1px solid var(--studio-blue);
-    padding: 10px 20px;
     transition: 0.3s ease;
 }
 
-.nav-right a:hover {
-    background: var(--studio-blue);
+.desktop-menu a:hover { color: var(--studio-blue); }
+
+.cta-nav {
+    border: 1px solid var(--studio-blue);
+    padding: 10px 20px;
+    color: white !important;
 }
 
-/* --- HERO --- */
-.hero {
-    padding: 100px 5% 80px;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-h1 {
-    font-size: clamp(2.5rem, 8vw, 5.5rem);
-    font-weight: 900;
-    line-height: 1.0;
-    letter-spacing: -2px;
-    margin-bottom: 30px;
-}
-
+/* --- TYPOGRAPHY & TITLES --- */
+.eyebrow { color: var(--studio-blue); font-weight: 800; font-size: 0.75rem; letter-spacing: 3px; display: block; margin-bottom: 15px; }
+h1 { font-size: clamp(2.5rem, 7vw, 5rem); font-weight: 900; line-height: 1.05; letter-spacing: -2px; margin-bottom: 30px; }
 .blue-text { color: var(--studio-blue); }
+.section-title { font-size: 0.75rem; color: var(--studio-blue); letter-spacing: 4px; font-weight: 900; margin-bottom: 60px; }
 
-.hero p {
-    font-size: 1.25rem;
-    color: var(--muted-slate);
-    max-width: 600px;
+/* --- GRIDS (PORTFOLIO, SERVICES, FRAMEWORK) --- */
+.portfolio-grid, .services-grid, .framework-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
 }
 
-/* --- STRUCTURAL GRID --- */
-.services-container {
-    display: flex;
-    max-width: 1400px;
-    margin: 0 auto;
-    border-top: 1px solid var(--border-slate);
+.portfolio-card, .service-column, .framework-item {
+    border: 1px solid var(--border);
+    padding: 40px;
+    transition: 0.3s ease;
 }
 
-.service-block {
-    flex: 1;
-    border-right: 1px solid var(--border-slate);
-    border-bottom: 1px solid var(--border-slate);
-}
+.portfolio-card:hover, .service-column:hover { border-color: var(--studio-blue); }
 
-.service-block:first-child {
-    border-left: 1px solid var(--border-slate);
-}
-
-.block-top {
-    padding: 15px 30px;
-    font-size: 0.7rem;
+.sub-label {
+    display: block;
+    font-size: 0.65rem;
     font-weight: 900;
     color: var(--studio-blue);
-    border-bottom: 1px solid var(--border-slate);
+    margin-bottom: 20px;
     letter-spacing: 2px;
 }
 
-.block-main {
-    padding: 50px 30px;
-}
+h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 15px; letter-spacing: -1px; }
+h4 { font-size: 1.3rem; margin-bottom: 10px; }
+p { color: var(--text-dim); font-size: 1rem; }
 
-h3 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    letter-spacing: -1px;
-}
-
-.block-main p {
-    font-size: 1.05rem;
-    color: var(--muted-slate);
-    line-height: 1.6;
-}
+/* --- CONTACT SECTION --- */
+#contact h2 { font-size: 3rem; font-weight: 900; margin-bottom: 10px; }
+.contact-details { margin-top: 30px; font-weight: 800; letter-spacing: 1px; }
 
 /* --- FOOTER --- */
-footer {
-    padding: 60px 5%;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
 .footer-inner {
+    padding: 50px 0;
     display: flex;
     justify-content: space-between;
-    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.7rem;
+    color: var(--text-dim);
     font-weight: 700;
-    color: var(--muted-slate);
     letter-spacing: 1px;
 }
 
-@media (max-width: 900px) {
-    .services-container { flex-direction: column; border-top: none; }
-    .service-block { border-left: 1px solid var(--border-slate); }
+/* --- RESPONSIVE --- */
+@media (max-width: 1000px) {
+    .services-grid, .framework-grid, .portfolio-grid { grid-template-columns: 1fr; }
+    .desktop-menu { display: none; } /* Add a hamburger menu later if needed */
+    h1 { font-size: 3rem; }
 }
