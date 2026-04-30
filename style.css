@@ -25,7 +25,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    min-height: 80px;
+    height: 80px;
     background: rgba(5, 7, 10, 0.98);
     border-bottom: 1px solid var(--border);
     z-index: 10000;
@@ -38,7 +38,7 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 10px 6%;
+    padding: 0 6%;
 }
 
 .brand {
@@ -54,7 +54,7 @@ body {
 .menu-links {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
 }
 
 .menu-links a {
@@ -63,7 +63,10 @@ body {
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 1px;
+    transition: 0.3s;
 }
+
+.menu-links a:hover { color: var(--studio-blue); }
 
 .nav-cta {
     border: 1px solid var(--studio-blue);
@@ -71,31 +74,55 @@ body {
     color: #fff !important;
 }
 
-/* --- MOBILE NAV STACK --- */
-@media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-    }
-    .menu-links {
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    body { padding-top: 130px; }
+/* --- HAMBURGER ICON --- */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
 }
 
-/* --- SECTIONS --- */
-.section-padding { padding: 90px 0; }
+.hamburger span {
+    width: 25px;
+    height: 2px;
+    background-color: #fff;
+    transition: 0.3s;
+}
+
+/* --- MOBILE STYLES --- */
+@media (max-width: 768px) {
+    .hamburger { display: flex; }
+    
+    .menu-links {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: var(--bg-black);
+        flex-direction: column;
+        padding: 40px 0;
+        gap: 30px;
+        border-bottom: 1px solid var(--border);
+        display: none; /* Hidden by default */
+    }
+
+    .menu-links.active { display: flex; }
+
+    /* Animation for Hamburger X */
+    .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+}
+
+/* --- SECTIONS & GRIDS --- */
+.section-padding { padding: 100px 0; }
 .grey-bg { background-color: var(--bg-grey); }
-.blue-bg { background: var(--studio-blue); text-align: center; color: #fff; }
+.blue-bg { background: var(--studio-blue); text-align: center; padding: 100px 0; }
 
-h1 { font-size: clamp(2.2rem, 7vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 25px; }
 .blue-text { color: var(--studio-blue); }
-.section-title { font-size: 0.7rem; color: var(--studio-blue); letter-spacing: 2px; font-weight: 900; margin-bottom: 40px; text-transform: uppercase; }
+.section-title { font-size: 0.75rem; color: var(--studio-blue); letter-spacing: 3px; font-weight: 900; margin-bottom: 50px; text-transform: uppercase; }
 
-/* --- GRIDS --- */
 .portfolio-grid, .services-grid, .framework-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -107,13 +134,12 @@ h1 { font-size: clamp(2.2rem, 7vw, 4.5rem); font-weight: 900; line-height: 1.1; 
     padding: 30px;
 }
 
-.sub-label { display: block; font-size: 0.6rem; color: var(--studio-blue); font-weight: 900; margin-bottom: 12px; letter-spacing: 1.5px; }
+.sub-label { display: block; font-size: 0.6rem; color: var(--studio-blue); font-weight: 900; margin-bottom: 15px; letter-spacing: 2px; }
 h3 { font-size: 1.4rem; margin-bottom: 10px; font-weight: 800; }
-h4 { font-size: 1.2rem; margin-bottom: 8px; font-weight: 800; }
-p { color: var(--text-dim); font-size: 0.95rem; }
+h4 { font-size: 1.2rem; margin-bottom: 10px; font-weight: 800; }
+p { color: var(--text-dim); }
 
-/* --- RESPONSIVE GRIDS --- */
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
     .portfolio-grid, .services-grid, .framework-grid { grid-template-columns: 1fr 1fr; }
 }
 
@@ -123,7 +149,3 @@ p { color: var(--text-dim); font-size: 0.95rem; }
 
 footer { padding: 40px 0; border-top: 1px solid var(--border); }
 .footer-inner { display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-dim); }
-
-@media (max-width: 500px) {
-    .footer-inner { flex-direction: column; gap: 10px; text-align: center; }
-}
