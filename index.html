@@ -12,10 +12,18 @@
     <nav class="main-nav">
         <div class="nav-container">
             <a href="#hero" class="brand">TH WEB <span class="accent">STUDIO</span></a>
-            <div class="menu-links">
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="menu-links" id="menu-links">
                 <a href="#portfolio">PORTFOLIO</a>
                 <a href="#services">SERVICES</a>
-                <a href="#framework">HOW WE WORK</a>
+                <a href="#framework">THE FRAMEWORK</a>
+                <a href="#about">ABOUT</a>
                 <a href="#contact" class="nav-cta">GET STARTED</a>
             </div>
         </div>
@@ -45,22 +53,22 @@
 
         <section id="services" class="section-padding grey-bg">
             <div class="container">
-                <h2 class="section-title">WHAT WE DO</h2>
+                <h2 class="section-title">SERVICES</h2>
                 <div class="services-grid">
                     <div class="service-column">
                         <span class="sub-label">01 / DESIGN</span>
                         <h3>Business Identity</h3>
-                        <p>We create professional logos and branding that help you look like the expert you are.</p>
+                        <p>Professional logos and branding that help you look like the expert you are in any market.</p>
                     </div>
                     <div class="service-column">
                         <span class="sub-label">02 / BUILD</span>
-                        <h3>Web Development</h3>
+                        <h3>Web Engineering</h3>
                         <p>Fast, reliable websites built with clean code so they work perfectly on every device.</p>
                     </div>
                     <div class="service-column">
                         <span class="sub-label">03 / DATA</span>
                         <h3>Insights & Analytics</h3>
-                        <p>We use Python to help you understand your business numbers through clear, simple dashboards.</p>
+                        <p>Using Python to help you understand your business numbers through clear, simple dashboards.</p>
                     </div>
                 </div>
             </div>
@@ -71,20 +79,29 @@
                 <h2 class="section-title">THE FRAMEWORK</h2>
                 <div class="framework-grid">
                     <div class="framework-item">
-                        <span class="sub-label">OUR GOAL</span>
+                        <span class="sub-label">OUR MISSION</span>
                         <h4>Quality Engineering</h4>
-                        <p>We combine traditional business values with modern tech to help clients succeed anywhere.</p>
+                        <p>We combine traditional values with modern tech to help clients succeed anywhere.</p>
                     </div>
                     <div class="framework-item">
-                        <span class="sub-label">OWNERSHIP</span>
+                        <span class="sub-label">FAQ</span>
                         <h4>You Own Everything</h4>
-                        <p>We don't hide code or lock you into contracts. Once the job is done, you own the site and the data.</p>
+                        <p>No hidden code or "lock-in" contracts. Once the job is done, you own the site and all data.</p>
                     </div>
                     <div class="framework-item">
-                        <span class="sub-label">SPEED</span>
-                        <h4>Built to Last</h4>
+                        <span class="sub-label">METHOD</span>
+                        <h4>Built to Scale</h4>
                         <p>We focus on speed, security, and making sure your site can grow as your business grows.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section-padding grey-bg">
+            <div class="container">
+                <h2 class="section-title">ABOUT US</h2>
+                <div class="about-content">
+                    <p>TH Web Studio was started to give businesses a better digital foundation. With a background in coding and data analytics, we build tools that actually help your business run better, not just look better.</p>
                 </div>
             </div>
         </section>
@@ -106,6 +123,24 @@
             <span>PROUDLY BASED IN THE US</span>
         </div>
     </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const menuLinks = document.getElementById('menu-links');
+
+        hamburger.addEventListener('click', () => {
+            menuLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.menu-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    </script>
 
 </body>
 </html>
