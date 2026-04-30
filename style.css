@@ -1,38 +1,23 @@
-/* --- VORTEK DIGITAL: GLOBAL STYLES --- */
-
 :root {
-    /* Carbon Flux Palette */
-    --bg-black: #050505;
-    --slate-gray: #0d0d0d;
-    --electric-cyan: #00f2ff;
-    --midnight-indigo: #121225;
-    --pure-white: #ffffff;
-    --muted-text: #888888;
+    /* New Gray/Black/Blue Palette */
+    --bg-black: #050505;        /* Deep Black */
+    --surface-gray: #121214;    /* Dark Steel Gray */
+    --vortek-blue: #2563eb;      /* Sharp Tech Blue */
+    --light-gray: #e5e7eb;       /* Text Gray */
+    --muted-gray: #6b7280;       /* Muted Text */
+    --blue-glow: rgba(37, 99, 235, 0.2);
     
-    /* Layout Constants */
     --transition: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-    --mobile-padding: 6%;
-    --desktop-padding: 10%;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-    background-color: var(--bg-black);
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     background-color: var(--bg-black);
-    color: var(--pure-white);
-    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--light-gray);
+    font-family: 'Inter', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
 }
 
 /* --- NAVIGATION --- */
@@ -40,64 +25,48 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px var(--mobile-padding);
+    padding: 25px 8%;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    background: rgba(5, 5, 5, 0.8);
+    background: rgba(5, 5, 5, 0.85);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.logo {
-    text-decoration: none;
-}
-
 .logo-text {
     font-size: 1.3rem;
-    font-weight: 800;
+    font-weight: 900;
     letter-spacing: 2px;
-    color: var(--pure-white);
+    color: var(--light-gray);
     text-transform: uppercase;
 }
 
 .logo-tag {
-    font-size: 0.55rem;
-    letter-spacing: 4px;
-    color: var(--electric-cyan);
+    font-size: 0.6rem;
+    letter-spacing: 5px;
+    color: var(--vortek-blue);
     display: block;
-    margin-top: -2px;
+    text-transform: uppercase;
 }
 
-.nav-links {
-    display: none; /* Mobile first: hide links */
-}
-
-@media (min-width: 768px) {
-    nav { padding: 25px var(--desktop-padding); }
-    .nav-links {
-        display: flex;
-        gap: 40px;
-    }
-}
+.nav-links { display: none; }
+@media (min-width: 768px) { .nav-links { display: flex; gap: 40px; } }
 
 .nav-links a {
-    color: var(--pure-white);
+    color: var(--light-gray);
     text-decoration: none;
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    opacity: 0.5;
+    opacity: 0.6;
     transition: var(--transition);
 }
 
-.nav-links a:hover {
-    opacity: 1;
-    color: var(--electric-cyan);
-}
+.nav-links a:hover { opacity: 1; color: var(--vortek-blue); }
 
-/* --- HERO SECTION --- */
+/* --- HERO --- */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -105,8 +74,8 @@ nav {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 120px var(--mobile-padding) 60px;
-    background: radial-gradient(circle at center, var(--midnight-indigo) 0%, var(--bg-black) 85%);
+    padding: 0 8%;
+    background: radial-gradient(circle at center, #0a0a1a 0%, var(--bg-black) 90%);
 }
 
 .hero-title {
@@ -114,112 +83,75 @@ nav {
     font-weight: 900;
     line-height: 1.05;
     margin-bottom: 25px;
-    letter-spacing: -2px;
 }
 
-.cyan-accent {
-    color: var(--electric-cyan);
-    text-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+.blue-accent {
+    color: var(--vortek-blue);
+    text-shadow: 0 0 30px var(--blue-glow);
 }
 
 .hero-sub {
-    color: var(--muted-text);
+    color: var(--muted-gray);
     font-size: clamp(1rem, 2vw, 1.15rem);
     max-width: 700px;
     margin-bottom: 40px;
 }
 
-/* --- SERVICES GRID --- */
-.services-section {
-    padding: 100px var(--mobile-padding);
-}
-
-@media (min-width: 768px) {
-    .services-section { padding: 120px var(--desktop-padding); }
-}
-
-.section-header {
-    margin-bottom: 60px;
-}
+/* --- SERVICES --- */
+.services-section { padding: 100px 8%; }
 
 .eyebrow {
-    color: var(--electric-cyan);
+    color: var(--vortek-blue);
     text-transform: uppercase;
     letter-spacing: 5px;
     font-size: 0.7rem;
-    display: block;
     margin-bottom: 10px;
+    display: block;
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr; /* 1 col for mobile */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-}
-
-@media (min-width: 992px) {
-    .grid-container {
-        grid-template-columns: repeat(3, 1fr); /* 3 cols for desktop */
-    }
+    margin-top: 50px;
 }
 
 .service-card {
-    background: var(--slate-gray);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--surface-gray);
+    border: 1px solid rgba(255, 255, 255, 0.03);
     padding: 50px 40px;
-    border-radius: 4px;
-    position: relative;
-    overflow: hidden;
     transition: var(--transition);
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--electric-cyan);
-    background: #111;
-}
-
-.service-card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
-.service-card p {
-    color: var(--muted-text);
-    font-size: 0.95rem;
+    border-color: var(--vortek-blue);
+    transform: translateY(-5px);
 }
 
 /* --- BUTTONS --- */
 .cta-btn {
-    padding: 20px 40px;
-    background: transparent;
-    border: 1px solid var(--electric-cyan);
-    color: var(--electric-cyan);
+    padding: 18px 40px;
+    border: 1px solid var(--vortek-blue);
+    color: var(--vortek-blue);
     text-decoration: none;
     font-weight: 700;
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    border-radius: 2px;
     transition: var(--transition);
 }
 
 .cta-btn:hover {
-    background: var(--electric-cyan);
-    color: var(--bg-black);
-    box-shadow: 0 10px 40px rgba(0, 242, 255, 0.3);
+    background: var(--vortek-blue);
+    color: var(--light-gray);
+    box-shadow: 0 10px 40px var(--blue-glow);
 }
 
 /* --- FOOTER --- */
 footer {
-    padding: 80px var(--mobile-padding);
+    padding: 60px 8%;
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.footer-content p {
-    font-size: 0.65rem;
-    letter-spacing: 3px;
-    color: var(--muted-text);
-}
+footer p { font-size: 0.7rem; color: var(--muted-gray); letter-spacing: 2px; }
