@@ -1,0 +1,146 @@
+/* --- VORTEK DIGITAL: BRAND ENGINE --- */
+
+:root {
+    /* Carbon Flux Palette */
+    --bg-black: #050505;
+    --slate-gray: #121212;
+    --electric-cyan: #00f2ff;
+    --midnight-indigo: #1a1a2e;
+    --pure-white: #ffffff;
+    --muted-text: #888888;
+    
+    /* Transitions */
+    --smooth: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body {
+    background-color: var(--bg-black);
+    color: var(--pure-white);
+    font-family: 'Inter', -apple-system, sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* --- SHARED NAVIGATION --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 8%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: linear-gradient(to bottom, var(--bg-black), transparent);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--pure-white);
+    text-transform: uppercase;
+}
+
+.logo-tag {
+    font-size: 0.6rem;
+    letter-spacing: 5px;
+    color: var(--electric-cyan);
+    font-weight: 400;
+}
+
+.nav-links a {
+    color: var(--pure-white);
+    text-decoration: none;
+    margin-left: 40px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.6;
+    transition: var(--smooth);
+}
+
+.nav-links a:hover {
+    opacity: 1;
+    color: var(--electric-cyan);
+}
+
+/* --- HERO COMPONENT --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 10%;
+    background: radial-gradient(circle at center, var(--midnight-indigo) 0%, var(--bg-black) 80%);
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 10vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.cyan-accent {
+    color: var(--electric-cyan);
+}
+
+.hero-sub {
+    color: var(--muted-text);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-bottom: 50px;
+    letter-spacing: 0.5px;
+}
+
+/* --- BUTTONS --- */
+.cta-btn {
+    padding: 20px 45px;
+    background: transparent;
+    border: 1px solid var(--electric-cyan);
+    color: var(--electric-cyan);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 2px;
+    transition: var(--smooth);
+}
+
+.cta-btn:hover {
+    background: var(--electric-cyan);
+    color: var(--bg-black);
+    box-shadow: 0 0 40px rgba(0, 242, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+/* --- FOOTER --- */
+footer {
+    padding: 60px 8%;
+    background-color: var(--slate-gray);
+    text-align: center;
+    border-top: 1px solid #222;
+}
+
+.footer-credits {
+    font-size: 0.8rem;
+    color: var(--muted-text);
+    letter-spacing: 1px;
+}
